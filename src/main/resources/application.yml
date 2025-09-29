@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23lioAnue2KqF7Br6I
+            client-secret: 1ac28ea183ee3e07fa4740e8c21f7f72f1c863c4
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: read:user,user:email
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+
+logging:
+  level:
+    root: INFO
+    com.example.secureApplication: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.springframework.security.oauth2.client: TRACE
